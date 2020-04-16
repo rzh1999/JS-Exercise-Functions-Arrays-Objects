@@ -170,14 +170,15 @@ function appleIndex(array1) {
 */
 function isItAnApple(array2) {
     const trueFalse = [];
-   
+    const truth = true;
+    const notTrue = false;
     for (let i=0; i <  array2.length; i++){
    
       if(array2[i] === "apple"){
-        trueFalse.push("true");
+        trueFalse.push(truth);
         
       }else{
-        trueFalse.push("false");
+        trueFalse.push(notTrue);
       } 
     }
    
@@ -239,7 +240,11 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  const holder = inventory[0];
+  console.log(holder)
+  console.log(holder.car_make)
+  
+  return `This is a ${holder.car_make} ${holder.car_model}`;
 }
 
 /**
