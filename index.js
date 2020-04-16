@@ -146,16 +146,11 @@ function getName(object1) {
  * the returned value should be: 2.
 */
 function appleIndex(array1) {
-  console.log("length: " + array1.length);
-  console.log(array1);
   for (let i=0; i<  array1.length; i++){
-    console.log("i= " + array1[i]);
     if (array1[i] === "apple"){
       return i;
     }
   }
-
-  
 }
 
 /**
@@ -173,8 +168,20 @@ function appleIndex(array1) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(array2) {
+    const trueFalse = [];
+   
+    for (let i=0; i <  array2.length; i++){
+   
+      if(array2[i] === "apple"){
+        trueFalse.push("true");
+        
+      }else{
+        trueFalse.push("false");
+      } 
+    }
+   
+    return trueFalse;
 }
 
 
