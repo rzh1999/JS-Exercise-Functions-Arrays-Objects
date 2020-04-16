@@ -35,8 +35,8 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
+function sayGoodbye(name) {
+  return `Goodbye, ${name}. Have a great day.`;
 }
 
 /**
@@ -53,8 +53,10 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(temperatureCelcius) {
+  let fahrenheit =  temperatureCelcius * 9/5 + 32;
+  
+  return Math.round(fahrenheit);
 }
 
 /**
@@ -74,8 +76,14 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temp, fc) {
+  if (fc === "F"){
+    return `${temp}F`;
+  }
+  if (fc === "C"){
+    let tempC = temperatureCtoF(temp);
+    return `${tempC}F`;
+  }
 }
 
 
@@ -95,8 +103,13 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  const person = {
+    id: id,
+    name: name,
+    email: email
+  }
+  return person;
 }
 
 /**
@@ -112,8 +125,8 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(object1) {
+ return `Hello, my name is ${object1.name}`;
 }
 
 
@@ -132,8 +145,17 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(array1) {
+  console.log("length: " + array1.length);
+  console.log(array1);
+  for (let i=0; i<  array1.length; i++){
+    console.log("i= " + array1[i]);
+    if (array1[i] === "apple"){
+      return i;
+    }
+  }
+
+  
 }
 
 /**
