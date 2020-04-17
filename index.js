@@ -255,6 +255,7 @@ function getCarInfoByIndex(inventory, index) {
  * it will return `This is a Lincoln Town Car`.
 */
 function getLastCarInfo(inputArray) { 
+  
     return `This is a ${inputArray[inputArray.length-1].car_make} ${inputArray[inputArray.length-1].car_model}`
 }
 
@@ -400,10 +401,8 @@ function carMaker(inputNumber) {
  let car2 = {
   odometer: inputNumber,
   drive(distance){
-    console.log("distance " + distance)
-    console.log("this odometer " + this.odometer)
     let result = this.odometer+distance;  
-    console.log("result " + result)
+    this.odometer++;
     return result;
   }
 };
