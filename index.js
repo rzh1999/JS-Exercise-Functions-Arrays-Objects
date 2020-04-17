@@ -317,31 +317,46 @@ function getCarInfoById(inputArray, carId) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-// function getOlderCars(inputArray, maxYear) {
-//   const years = [];
-//   console.log("MAX YEAR " + maxYear);
-  
-//   for (let i=0; i < inputArray.length; i++){
+function getOlderCars(inputArray, maxYear) {
+  const years = [];
+  console.log("MAX YEAR " + maxYear);
+  let minYear = 1985;
+  let maxYears = 1994;
+  for (let i=0; i < inputArray.length; i++){
 
     
-//       if (maxYear < inputArray[i].car_year){
-//         console.log("years1  " + years.length)
-//         return years;
-//       }
+    //   if (maxYear < inputArray[i].car_year){
+    //     console.log("years1  " + years.length)
+    //     return years;
+    //   }
 
-//      if (  maxYear > inputArray[i].car_year ){
-//         console.log("years2  " + years.length)
-//       return inputArray;
-//     }
+    //  if (  maxYear > inputArray[i].car_year ){
+    //     console.log("years2  " + years.length)
+    //   return inputArray;
+    // }
 
-//     if (maxYear <= inputArray[i].car_year){
-//       return years.push(inputArray[i].car_year)
-//     }
+   if (inputArray[i].car_year > minYear && inputArray[i].car_year < maxYears){
+    inputArray[i].car_year.filter(c => c.car_year <= 1990);
+     years.push(inputArray[i].car_year)
+    
+     }
    
-//   }
- 
-//   return years;
-// }
+
+  //let values = [2, 56, 3, 41, 0, 4, 100, 23];
+
+   
+  }
+  console.log(years)
+//   years.sort((a, b) => a - b);
+// let lowMiddle = Math.floor((years.length - 1) / 2);
+// let highMiddle = Math.ceil((years.length - 1) / 2);
+// let median = (years[lowMiddle] + years[highMiddle]) / 2;
+//   console.log("median " + median)
+//   console.log("low " + lowMiddle)
+//   console.log("highMiddle " + highMiddle)
+  
+  return years;
+}
 
 
 
