@@ -186,7 +186,6 @@ function isItAnApple(array2) {
 }
 
 
-
 /*
 // ⭐️ Example Test Data ⭐️
 
@@ -317,9 +316,33 @@ function getCarInfoById(inputArray, carId) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
-}
+// function getOlderCars(inputArray, maxYear) {
+//   const years = [];
+//   console.log("MAX YEAR " + maxYear);
+  
+//   for (let i=0; i < inputArray.length; i++){
+
+    
+//       if (maxYear < inputArray[i].car_year){
+//         console.log("years1  " + years.length)
+//         return years;
+//       }
+
+//      if (  maxYear > inputArray[i].car_year ){
+//         console.log("years2  " + years.length)
+//       return inputArray;
+//     }
+
+//     if (maxYear <= inputArray[i].car_year){
+//       return years.push(inputArray[i].car_year)
+//     }
+   
+//   }
+ 
+//   return years;
+// }
+
+
 
 /**
  * ### Challenge `getGermanCars`
@@ -334,9 +357,32 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(inputArray) {
+  const cars = [];
+  for (let i=0; i < inputArray.length; i++){
+    switch(inputArray[i].car_make){
+      case "BMW":
+        console.log(inputArray[i])
+        cars.push(inputArray[i])
+        break;
+      case "Audi":
+        cars.push(inputArray[i])
+        break;
+      case "Mercedes-Benz":
+        cars.push(inputArray[i])
+        break;
+      case "Volkswagen":
+        cars.push(inputArray[i])
+        break;
+      default:
+    }
+
+ }
+ console.log(cars.length)
+ console.log(cars)
+ return cars;
 }
+
 
 /**
  * ### Challenge `carMaker`
