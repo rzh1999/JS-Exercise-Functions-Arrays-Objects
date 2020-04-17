@@ -362,7 +362,7 @@ function getGermanCars(inputArray) {
   for (let i=0; i < inputArray.length; i++){
     switch(inputArray[i].car_make){
       case "BMW":
-        console.log(inputArray[i])
+       
         cars.push(inputArray[i])
         break;
       case "Audi":
@@ -378,8 +378,7 @@ function getGermanCars(inputArray) {
     }
 
  }
- console.log(cars.length)
- console.log(cars)
+ 
  return cars;
 }
 
@@ -397,8 +396,19 @@ function getGermanCars(inputArray) {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(inputNumber) {
+ let car2 = {
+  odometer: inputNumber,
+  drive(distance){
+    console.log("distance " + distance)
+    console.log("this odometer " + this.odometer)
+    let result = this.odometer+distance;  
+    console.log("result " + result)
+    return result;
+  }
+};
+
+  return car2;
 }
 
 /// ////// END OF CHALLENGE /////////
